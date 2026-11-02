@@ -1,0 +1,88 @@
+/* Pages outside the original site: login, account, booking, dashboard.
+   They reuse the Sura tokens and the academy "paper" components. */
+
+.app{background:var(--paper);color:var(--ink);min-height:100vh;display:flex;flex-direction:column}
+.app a{color:inherit}
+.app-hdr{background:var(--night);color:#F3F1EC;border-bottom:1px solid var(--night-3);padding-top:env(safe-area-inset-top,0px);position:sticky;top:0;z-index:30}
+.app-hdr .wrap{display:flex;align-items:center;gap:18px;height:68px}
+.app-hdr .logo{width:62px;color:#fff;flex:none}
+.app-hdr nav{display:flex;gap:4px;margin-inline-start:auto;flex-wrap:wrap;justify-content:flex-end}
+.app-hdr nav a,.app-hdr nav button{padding:6px 12px;font-size:.92rem;color:#E6E2D8;border:1px solid transparent}
+.app-hdr nav a:hover,.app-hdr nav button:hover{color:var(--gold-hi)}
+.app-hdr nav a.on{border-color:var(--gold);color:#fff}
+.app-main{flex:1;padding-block:clamp(28px,5vw,56px)}
+.app-title{display:grid;gap:6px;margin-bottom:28px}
+.app-title h1{font-size:clamp(1.7rem,4vw,2.4rem)}
+.app-title p{color:var(--ink-2);max-width:64ch}
+.app-foot{border-top:1px solid var(--line);padding-block:20px;font-size:.84rem;color:var(--ink-2)}
+
+/* The original stylesheet styles bare <form>/<input> for the dark contact form. Reset inside app pages. */
+:where(.app) form{background:none;padding:0;display:grid;grid-template-columns:none;gap:14px}
+.app .pform input,.app .pform select,.app .pform textarea{color:var(--ink);background:#fff;border:1px solid var(--line);padding:10px 12px;border-radius:0;width:100%;font:inherit}
+.app .pform textarea{min-height:110px;resize:vertical}
+.app .pform input:focus,.app .pform select:focus,.app .pform textarea:focus{border-color:var(--gold);outline:none}
+.app .pform label{font-size:.85rem;color:var(--ink-2);display:grid;gap:5px}
+.app .btn{color:var(--ink);border-color:var(--gold)}
+.app .btn:hover{background:var(--gold);color:var(--night)}
+.app .btn.solid{color:var(--night)}
+.app .btn.dark{background:var(--night);border-color:var(--night);color:#fff}
+.app .btn.dark:hover{background:var(--night-2)}
+.app .btn.sm{padding:.45em 1em;font-size:.85rem}
+.app .btn.danger{border-color:#B65C43;color:#B65C43}
+.app .btn.danger:hover{background:#B65C43;color:#fff}
+.app .btn[disabled]{opacity:.5;pointer-events:none}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:640px){.row2{grid-template-columns:1fr}}
+.inline{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+
+.auth-box{max-width:440px;margin:0 auto;background:#fff;border:1px solid var(--line);padding:clamp(22px,4vw,36px);display:grid;gap:18px}
+.auth-box h1{font-size:1.6rem}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
+.auth-tabs button{padding:10px;font-size:.95rem;color:var(--ink-2)}
+.auth-tabs button.on{background:var(--night);color:#fff}
+.or{display:flex;align-items:center;gap:12px;color:var(--ink-2);font-size:.85rem}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.err{color:#A3412A;font-size:.9rem}
+.ok{color:var(--ok);font-size:.9rem}
+.muted{color:var(--ink-2);font-size:.9rem}
+
+.card-p{background:#fff;border:1px solid var(--line);padding:clamp(18px,3vw,26px);display:grid;gap:14px;min-width:0}
+.card-p h2{font-size:1.25rem}
+.two-col{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+@media (max-width:900px){.two-col{grid-template-columns:1fr}}
+
+.pill{display:inline-block;font-size:.76rem;font-weight:500;padding:2px 10px;border:1px solid var(--line);background:var(--paper-2);white-space:nowrap}
+.pill.new{background:#FBF1E3;border-color:#E9D2AE;color:#8A5A1E}
+.pill.confirmed{background:#E3ECE8;border-color:#BFD6CC;color:#1F5248}
+.pill.done{background:#E7ECE8;color:var(--ink)}
+.pill.cancelled{background:#F6E6E1;border-color:#E2B9AA;color:#9A4632}
+
+.thumbs{display:flex;flex-wrap:wrap;gap:8px}
+.thumbs img{width:76px;height:76px;object-fit:cover;border:1px solid var(--line)}
+.loc{background:var(--paper-2);border:1px dashed var(--line);padding:12px 14px;font-size:.9rem;display:grid;gap:6px}
+
+/* dashboard */
+.dash{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:start}
+.dash-nav{display:grid;gap:2px;background:#fff;border:1px solid var(--line);padding:8px;position:sticky;top:84px}
+.dash-nav button{text-align:start;padding:10px 12px;font-size:.95rem;color:var(--ink-2);display:flex;justify-content:space-between;gap:8px}
+.dash-nav button:hover{background:var(--paper)}
+.dash-nav button.on{background:var(--night);color:#fff}
+.dash-nav b{font-size:.75rem;background:var(--gold);color:var(--night);padding:0 8px;font-variant-numeric:tabular-nums}
+@media (max-width:900px){.dash{grid-template-columns:1fr}.dash-nav{position:static;display:flex;overflow-x:auto}.dash-nav button{white-space:nowrap}}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:800px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{background:var(--night);color:#fff;padding:18px;display:grid;gap:2px;text-align:start}
+.kpi b{font-family:var(--f-display);font-size:2rem;color:var(--gold-hi);font-variant-numeric:tabular-nums;line-height:1.2}
+.kpi span{font-size:.86rem;color:var(--mist)}
+.app .mtable select{border:1px solid var(--line);background:#fff;color:var(--ink);padding:4px 8px;font:inherit;font-size:.86rem}
+.text-grid{display:grid;gap:12px}
+.text-item{display:grid;gap:4px}
+.text-item small{color:var(--ink-2);font-size:.76rem;display:flex;gap:8px}
+.text-item.changed textarea{border-color:var(--gold)!important;background:#FFFCF5!important}
+.img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.img-cell{background:#fff;border:1px solid var(--line);display:grid}
+.img-cell img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--paper)}
+.img-cell div{padding:8px;display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:.78rem;color:var(--ink-2)}
+.img-cell label{cursor:pointer;color:var(--gold-ink);font-weight:500}
+.img-cell.over{border-color:var(--gold)}
+.sticky-save{position:sticky;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:12px 0;display:flex;gap:10px;align-items:center;z-index:5}

@@ -1,0 +1,68 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isAdmin() {
+      return signedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+    function str(v, max) { return v is string && v.size() <= max; }
+
+    // Admins are added by hand in the Firebase console (doc id = user UID).
+    match /admins/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isAdmin());
+      allow write: if false;
+    }
+
+    // Site texts, images and settings: public read, admin write.
+    match /site/{doc} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Academy articles: published ones are public.
+    match /articles/{id} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // Contact form submissions from the home page.
+    match /requests/{id} {
+      allow create: if str(request.resource.data.name, 120)
+        && str(request.resource.data.message, 4000)
+        && request.resource.data.status == 'new'
+        && request.resource.data.keys().hasOnly(['name','phone','email','role','org','service','message','status','createdAt','uid']);
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Customer bookings.
+    match /bookings/{id} {
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.status == 'new'
+        && str(request.resource.data.service, 120)
+        && str(request.resource.data.notes, 4000);
+      allow read: if signedIn() && (resource.data.uid == request.auth.uid || isAdmin());
+      allow update: if isAdmin()
+        || (signedIn()
+            && resource.data.uid == request.auth.uid
+            && resource.data.status in ['new', 'confirmed']
+            && request.resource.data.status == 'cancelled'
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'updatedAt']));
+      allow delete: if isAdmin();
+    }
+
+    // Customer profiles.
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isAdmin());
+      allow create, update: if signedIn() && request.auth.uid == uid
+        && !('role' in request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    // Outgoing email queue (written only by Cloud Functions).
+    match /mail/{id} {
+      allow read, write: if false;
+    }
+  }
+}

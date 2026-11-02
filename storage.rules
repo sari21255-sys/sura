@@ -1,0 +1,31 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAdmin() {
+      return request.auth != null
+        && firestore.exists(/databases/(default)/documents/admins/$(request.auth.uid));
+    }
+    function isImage() {
+      return request.resource.contentType.matches('image/.*');
+    }
+
+    // Site images and article images: public read, admin upload.
+    match /site/{path=**} {
+      allow read: if true;
+      allow write: if isAdmin() && isImage() && request.resource.size < 8 * 1024 * 1024;
+    }
+    match /articles/{path=**} {
+      allow read: if true;
+      allow write: if isAdmin() && isImage() && request.resource.size < 8 * 1024 * 1024;
+    }
+
+    // Booking attachments: the customer and admins only.
+    match /bookings/{uid}/{file} {
+      allow read: if request.auth != null && (request.auth.uid == uid || isAdmin());
+      allow create: if request.auth != null && request.auth.uid == uid
+        && isImage() && request.resource.size < 10 * 1024 * 1024;
+      allow delete: if isAdmin();
+    }
+  }
+}

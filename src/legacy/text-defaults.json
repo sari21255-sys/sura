@@ -1,0 +1,968 @@
+[
+{
+"k": "top.1",
+"sec": "top",
+"secName": "الواجهة",
+"tag": "span",
+"html": "Sura Media · since 2022"
+},
+{
+"k": "top.2",
+"sec": "top",
+"secName": "الواجهة",
+"tag": "h1",
+"html": "شركة سعودية <em>تسري</em> بالقصة حتى تصل."
+},
+{
+"k": "top.3",
+"sec": "top",
+"secName": "الواجهة",
+"tag": "p",
+"html": "ننتج الوثائقيات والأفلام الدعائية، ونغطي المؤتمرات والفعاليات بالبث المباشر، ونصوّر العمارة والمنتج والناس في كل مناطق المملكة."
+},
+{
+"k": "story.1",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "span",
+"html": "منذ 2022"
+},
+{
+"k": "story.2",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "span",
+"html": "our story"
+},
+{
+"k": "story.3",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "h2",
+"html": "قصّتنا"
+},
+{
+"k": "story.4",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "p",
+"html": "فريق إنتاج يبدأ كل مشروع بسؤال واحد: ما الحكاية التي تستحق أن تُرى؟"
+},
+{
+"k": "story.5",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "p",
+"html": "بدأت سُرى عام 2022 بفكرة بسيطة: أن تصل اللحظة إلى الناس كما عاشها أصحابها. اسمنا من السُّرى، سير الليل الطويل الذي يصل بصاحبه في الصباح، وهكذا نعمل: تحضير هادئ، وتصوير دقيق، ومونتاج يأخذ وقته حتى تخرج المادة جاهزة."
+},
+{
+"k": "story.6",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "p",
+"html": "نعمل اليوم مع جهات حكومية وشركات وأفراد، من مؤتمرات الاستثمار ومهرجانات الثقافة إلى الفنادق والمطاعم والأفراح. يضم فريقنا مخرجين ومصورين ومونتيرين ومهندسي صوت ومصممين، ومعنا معداتنا من الكاميرات السينمائية والدرون حتى مكسرات البث والشاشات."
+},
+{
+"k": "story.7",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "b",
+"html": "+200"
+},
+{
+"k": "story.8",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "span",
+"html": "جهة حكومية وخاصة"
+},
+{
+"k": "story.9",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "b",
+"html": "19,000"
+},
+{
+"k": "story.10",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "span",
+"html": "ساعة تصوير"
+},
+{
+"k": "story.11",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "b",
+"html": "216"
+},
+{
+"k": "story.12",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "span",
+"html": "زواجًا موثّقًا"
+},
+{
+"k": "story.13",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "b",
+"html": "+8"
+},
+{
+"k": "story.14",
+"sec": "story",
+"secName": "قصتنا",
+"tag": "span",
+"html": "مختصين في الفريق"
+},
+{
+"k": "services.1",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "span",
+"html": "services"
+},
+{
+"k": "services.2",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "h2",
+"html": "خدماتنا"
+},
+{
+"k": "services.3",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "p",
+"html": "اختر الخدمة التي تحتاجها، أو اجمع أكثر من خدمة في مشروع واحد ونتولى التنسيق بينها."
+},
+{
+"k": "services.4",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "span",
+"html": "photography"
+},
+{
+"k": "services.5",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "h3",
+"html": "صور سُرى"
+},
+{
+"k": "services.6",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "small",
+"html": "نبذة عن الخدمة"
+},
+{
+"k": "services.7",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "p",
+"html": "نصوّر المبنى والمنتج والشخص بزاوية تخدم مكان النشر: ملف تعريفي، منيو مطعم، منصة حجز، أو حملة إعلانية. نختار الضوء قبل الضغط على الزر، ثم تمر كل صورة على معالجة لونية في Lightroom وPhotoshop."
+},
+{
+"k": "services.8",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "معماري وعقاري"
+},
+{
+"k": "services.9",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "تجاري ومنتجات"
+},
+{
+"k": "services.10",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "أطعمة ومنيو"
+},
+{
+"k": "services.11",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "بورتريه شخصي"
+},
+{
+"k": "services.12",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "span",
+"html": "films"
+},
+{
+"k": "services.13",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "h3",
+"html": "أفلام سُرى"
+},
+{
+"k": "services.14",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "small",
+"html": "نبذة عن الخدمة"
+},
+{
+"k": "services.15",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "p",
+"html": "وثائقيات وأفلام دعائية وتعريفية. نبحث في المعلومة ونكتب القصة، ونصوّر بكاميرات سينمائية ودرون، ثم نتولى المونتاج والتلوين والتعليق الصوتي حتى النسخة النهائية، مع تعديلين خلال خمسة أيام من التسليم."
+},
+{
+"k": "services.16",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "أفلام وثائقية"
+},
+{
+"k": "services.17",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "إعلانات وبرومو"
+},
+{
+"k": "services.18",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "أفلام مؤسسية"
+},
+{
+"k": "services.19",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "سلاسل للمنصات"
+},
+{
+"k": "services.20",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "span",
+"html": "coverage &amp; live"
+},
+{
+"k": "services.21",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "h3",
+"html": "التغطية الإعلامية والبث المباشر"
+},
+{
+"k": "services.22",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "small",
+"html": "نبذة عن الخدمة"
+},
+{
+"k": "services.23",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "p",
+"html": "للمؤتمرات والمعارض والحفلات: كاميرات تلفزيونية مرتبطة بمكسر بث، ودمج للعروض التقديمية، ونقل مباشر للشاشات ومنصات التواصل. وتصلك مادة ممنتجة لحظة انتهاء الحفل."
+},
+{
+"k": "services.24",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "جلسات رئيسية"
+},
+{
+"k": "services.25",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "مقابلات ولقاءات"
+},
+{
+"k": "services.26",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "بث للشاشات"
+},
+{
+"k": "services.27",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "ملخصات للنشر"
+},
+{
+"k": "services.28",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "span",
+"html": "aerial"
+},
+{
+"k": "services.29",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "h3",
+"html": "التصوير الجوي"
+},
+{
+"k": "services.30",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "small",
+"html": "نبذة عن الخدمة"
+},
+{
+"k": "services.31",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "p",
+"html": "درون بدقة 4K، وهايبر لابس 8K، وبانوراما 360، وتصوير بنظام التتبع من ارتفاع يصل إلى 500 متر. نستخدمه لمتابعة نسب الإنجاز في المشاريع، وتسويق العقارات والمخططات، وتغطية الفعاليات المفتوحة."
+},
+{
+"k": "services.32",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "مشاريع ومخططات"
+},
+{
+"k": "services.33",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "عقارات وفنادق"
+},
+{
+"k": "services.34",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "فعاليات ورياضة"
+},
+{
+"k": "services.35",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "span",
+"html": "weddings"
+},
+{
+"k": "services.36",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "h3",
+"html": "الأفراح والمناسبات"
+},
+{
+"k": "services.37",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "small",
+"html": "نبذة عن الخدمة"
+},
+{
+"k": "services.38",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "p",
+"html": "ليلة العريس من التجهيز حتى الزفة: تصوير خاص، وفوتو وفيديو شامل للقاعة، ودرون، وبرومو للحفل، ومعالجة لجميع الصور، ثم تصميم كرت الزواج وطباعة الألبوم."
+},
+{
+"k": "services.39",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "تصوير العريس"
+},
+{
+"k": "services.40",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "برومو الحفل"
+},
+{
+"k": "services.41",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "طباعة الألبوم"
+},
+{
+"k": "services.42",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "span",
+"html": "post-production"
+},
+{
+"k": "services.43",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "h3",
+"html": "المونتاج والهندسة الصوتية"
+},
+{
+"k": "services.44",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "small",
+"html": "نبذة عن الخدمة"
+},
+{
+"k": "services.45",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "p",
+"html": "مونتاج على Premiere وDaVinci Resolve، وتصحيح ألوان وإعداد LUTs، وموشن جرافيك. وفي الصوت: تسجيل التعليق الصوتي والبودكاست، وتنظيف الضوضاء، والمزج والماسترينغ للبث الرقمي."
+},
+{
+"k": "services.46",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "مونتاج وتلوين"
+},
+{
+"k": "services.47",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "تعليق صوتي"
+},
+{
+"k": "services.48",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "Mixing &amp; Mastering"
+},
+{
+"k": "services.49",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "li",
+"html": "موشن جرافيك"
+},
+{
+"k": "services.50",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "h3",
+"html": "المشاريع الخاصة"
+},
+{
+"k": "services.51",
+"sec": "services",
+"secName": "خدماتنا",
+"tag": "p",
+"html": "بعض المشاريع تحتاج أكثر من خدمة ومدة أطول: برنامج تلفزيوني لموسم كامل، أو توثيق جهة على مدى أشهر، أو حملة بصرية من الفكرة حتى النشر. نجلس معك لصياغة الفكرة وكتابة الملف الفني، ثم نقدم عرضًا فنيًا وماليًا قبل البدء."
+},
+{
+"k": "films.1",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h2",
+"html": "أعمال الأفلام"
+},
+{
+"k": "films.2",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "documentaries"
+},
+{
+"k": "films.3",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h3",
+"html": "أفلام وثائقية"
+},
+{
+"k": "films.4",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "p",
+"html": "نتعامل مع الوثائقي كذاكرة للمكان وأهله: بحث في المصادر، ونص مكتوب بإيقاع الحكاية، وتصوير يترك المشهد يتكلم. ومن هذه الأعمال برنامج «من ذاكرة المدينة» لقناة العربية في موسم حج 2025."
+},
+{
+"k": "films.5",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "من ذاكرة المدينة"
+},
+{
+"k": "films.6",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "قناة العربية · حج 2025"
+},
+{
+"k": "films.7",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "من عين الميدان"
+},
+{
+"k": "films.8",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "رؤى المدينة القابضة"
+},
+{
+"k": "films.9",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "توثيق المواقع الأثرية بالمدينة المنورة"
+},
+{
+"k": "films.10",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "بلدية المدينة المنورة"
+},
+{
+"k": "films.11",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "فيلم الجامعة الإسلامية"
+},
+{
+"k": "films.12",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "الجامعة الإسلامية بالمدينة المنورة"
+},
+{
+"k": "films.13",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "corporate films"
+},
+{
+"k": "films.14",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h3",
+"html": "أفلام مؤسسية وتعريفية"
+},
+{
+"k": "films.15",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "p",
+"html": "أفلام تُعرض في حفلات الجهات وتُنشر على منصاتها: الفيلم السنوي للموظفين، وأفلام التخرج، وأفلام الجوائز والمواسم. نصوّر الناس في أماكن عملهم ونترك لهم مساحة الكلام."
+},
+{
+"k": "films.16",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "الفيلم السنوي لموظفي النهدي"
+},
+{
+"k": "films.17",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "عيادات النهدي · ثلاثة أعوام متتالية"
+},
+{
+"k": "films.18",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "فيلم موسم الحج"
+},
+{
+"k": "films.19",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "شركة دور للضيافة · 2024"
+},
+{
+"k": "films.20",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "فيلم جائزة المعلم"
+},
+{
+"k": "films.21",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "إدارة التعليم · 2024"
+},
+{
+"k": "films.22",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "فيلم حفل التخرج"
+},
+{
+"k": "films.23",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "جامعة الأمير مقرن · 2023"
+},
+{
+"k": "films.24",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "event coverage"
+},
+{
+"k": "films.25",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h3",
+"html": "تغطيات الفعاليات"
+},
+{
+"k": "films.26",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "p",
+"html": "تغطيات كاملة لمهرجانات ومؤتمرات وبطولات، يُنشر كثير منها على الحسابات الرسمية للجهات خلال ساعات من انتهاء الحدث."
+},
+{
+"k": "films.27",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "مهرجان الثقافات والشعوب"
+},
+{
+"k": "films.28",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "النسختان الثانية عشرة والثالثة عشرة"
+},
+{
+"k": "films.29",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "منتدى المدينة للاستثمار"
+},
+{
+"k": "films.30",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "غرفة المدينة المنورة"
+},
+{
+"k": "films.31",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "بطولة السيدات لكرة السلة"
+},
+{
+"k": "films.32",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "المدينة الرياضية · 2025"
+},
+{
+"k": "films.33",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "h4",
+"html": "برنامج حماية"
+},
+{
+"k": "films.34",
+"sec": "films",
+"secName": "الأفلام",
+"tag": "span",
+"html": "الهيئة الملكية لمحافظة العلا"
+},
+{
+"k": "photos.1",
+"sec": "photos",
+"secName": "الصور",
+"tag": "h2",
+"html": "أعمال الصور الفوتوغرافية"
+},
+{
+"k": "photos.2",
+"sec": "photos",
+"secName": "الصور",
+"tag": "span",
+"html": "places &amp; architecture"
+},
+{
+"k": "photos.3",
+"sec": "photos",
+"secName": "الصور",
+"tag": "h3",
+"html": "مكان وعمارة"
+},
+{
+"k": "photos.4",
+"sec": "photos",
+"secName": "الصور",
+"tag": "p",
+"html": "فنادق وشقق ومعارض عقارية ومواقع مفتوحة. نختار ساعة التصوير بحسب الضوء، ونضبط الخطوط الرأسية، ونعالج الصورة لتبدو كما يراها الزائر في أفضل أيام المكان."
+},
+{
+"k": "photos.5",
+"sec": "photos",
+"secName": "الصور",
+"tag": "span",
+"html": "events &amp; festivals"
+},
+{
+"k": "photos.6",
+"sec": "photos",
+"secName": "الصور",
+"tag": "h3",
+"html": "فعاليات ومعارض"
+},
+{
+"k": "photos.7",
+"sec": "photos",
+"secName": "الصور",
+"tag": "p",
+"html": "الحِرف والأجنحة والضيوف وحركة المكان، كما في مهرجان الثقافات والشعوب وفعاليات يومي التأسيس والوطني على مدى أربعة أعوام."
+},
+{
+"k": "photos.8",
+"sec": "photos",
+"secName": "الصور",
+"tag": "span",
+"html": "conferences"
+},
+{
+"k": "photos.9",
+"sec": "photos",
+"secName": "الصور",
+"tag": "h3",
+"html": "مؤتمرات وندوات"
+},
+{
+"k": "photos.10",
+"sec": "photos",
+"secName": "الصور",
+"tag": "p",
+"html": "الجلسات الرئيسية والمتحدثون والحوارات الجانبية. نتحرك في القاعة بهدوء حتى لا تقطع العدسة سير الجلسة، ونسلّم مختارات للنشر في اليوم نفسه."
+},
+{
+"k": "photos.11",
+"sec": "photos",
+"secName": "الصور",
+"tag": "span",
+"html": "sports"
+},
+{
+"k": "photos.12",
+"sec": "photos",
+"secName": "الصور",
+"tag": "h3",
+"html": "رياضة"
+},
+{
+"k": "photos.13",
+"sec": "photos",
+"secName": "الصور",
+"tag": "p",
+"html": "من أطراف الملعب حتى المدرجات: كرة سلة وكرة قدم ومنافسات محلية، ومنها التغطية الكاملة لبطولة السيدات لكرة السلة وبطولة بادل جو."
+},
+{
+"k": "photos.14",
+"sec": "photos",
+"secName": "الصور",
+"tag": "span",
+"html": "products &amp; food"
+},
+{
+"k": "photos.15",
+"sec": "photos",
+"secName": "الصور",
+"tag": "h3",
+"html": "منتجات وأطعمة"
+},
+{
+"k": "photos.16",
+"sec": "photos",
+"secName": "الصور",
+"tag": "p",
+"html": "صور منيو وحملات للمطاعم والعلامات التجارية. ننسّق الطبق والإضاءة بحسب المنصة: مربّع لإنستقرام، أفقي للمنيو الرقمي، وخلفية بيضاء للمتجر الإلكتروني."
+},
+{
+"k": "photos.17",
+"sec": "photos",
+"secName": "الصور",
+"tag": "span",
+"html": "weddings &amp; portraits"
+},
+{
+"k": "photos.18",
+"sec": "photos",
+"secName": "الصور",
+"tag": "h3",
+"html": "أفراح وشخصيات"
+},
+{
+"k": "photos.19",
+"sec": "photos",
+"secName": "الصور",
+"tag": "p",
+"html": "ليلة العريس من التجهيز حتى الزفة، وبورتريهات للشخصيات العامة في الاستوديو أو في موقعها. وثّقنا حتى اليوم 216 زواجًا."
+},
+{
+"k": "partners.1",
+"sec": "partners",
+"secName": "شركاؤنا",
+"tag": "span",
+"html": "trusted by"
+},
+{
+"k": "partners.2",
+"sec": "partners",
+"secName": "شركاؤنا",
+"tag": "h2",
+"html": "كسبنا ثقتهم"
+},
+{
+"k": "partners.3",
+"sec": "partners",
+"secName": "شركاؤنا",
+"tag": "p",
+"html": "جهات حكومية وشركات وفنادق ومؤسسات تعليمية وجمعيات عملنا معها في المدينة المنورة والعلا وبقية مناطق المملكة."
+},
+{
+"k": "partners.4",
+"sec": "partners",
+"secName": "شركاؤنا",
+"tag": "p",
+"html": "<b>29</b> جهة حكومية و<b>84</b> جهة خاصة وفردًا في السنوات الأربع الأخيرة"
+},
+{
+"k": "contact.1",
+"sec": "contact",
+"secName": "التواصل",
+"tag": "span",
+"html": "contact us"
+},
+{
+"k": "contact.2",
+"sec": "contact",
+"secName": "التواصل",
+"tag": "h2",
+"html": "تواصل معنا"
+},
+{
+"k": "contact.3",
+"sec": "contact",
+"secName": "التواصل",
+"tag": "p",
+"html": "أخبرنا عن الحدث أو الفكرة، وموعدها ومكانها، ونرجع لك بتصور أولي وعرض سعر."
+},
+{
+"k": "contact.4",
+"sec": "contact",
+"secName": "التواصل",
+"tag": "dd",
+"html": "sura.mediahub@gmail.com"
+},
+{
+"k": "contact.5",
+"sec": "contact",
+"secName": "التواصل",
+"tag": "dd",
+"html": "+966 54 934 2775"
+},
+{
+"k": "contact.6",
+"sec": "contact",
+"secName": "التواصل",
+"tag": "dd",
+"html": "جميع مناطق المملكة العربية السعودية"
+},
+{
+"k": "contact.7",
+"sec": "contact",
+"secName": "التواصل",
+"tag": "b",
+"html": "انضم إلى فريقنا"
+},
+{
+"k": "contact.8",
+"sec": "contact",
+"secName": "التواصل",
+"tag": "span",
+"html": "مصورون · مونتيرون · مصممون"
+},
+{
+"k": "contact.9",
+"sec": "contact",
+"secName": "التواصل",
+"tag": "p",
+"html": "اضغط «إرسال عبر واتساب» لتصلنا مباشرة، أو انسخ النص وأرسله على البريد sura.mediahub@gmail.com."
+},
+{
+"k": "footer.1",
+"sec": "footer",
+"secName": "التذييل",
+"tag": "p",
+"html": "سُرى للإعلام، إنتاج مرئي وصوتي وتغطيات إعلامية منذ 2022."
+},
+{
+"k": "footer.2",
+"sec": "footer",
+"secName": "التذييل",
+"tag": "li",
+"html": "sura.mediahub@gmail.com"
+},
+{
+"k": "footer.3",
+"sec": "footer",
+"secName": "التذييل",
+"tag": "li",
+"html": "+966 54 934 2775"
+},
+{
+"k": "footer.4",
+"sec": "footer",
+"secName": "التذييل",
+"tag": "li",
+"html": "المملكة العربية السعودية"
+}
+]

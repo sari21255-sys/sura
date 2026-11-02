@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+.env*.local
+.firebase/
+*.log
+functions/node_modules/
+service-account*.json
+/scratch/
