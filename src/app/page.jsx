@@ -22,7 +22,7 @@ const JSON_LD = {
       alternateName: ['سرى للإعلام', 'Sura Media', 'سرى ميديا'],
       url: 'https://sura-media.com',
       logo: 'https://sura-media.com/media/logo.png',
-      image: 'https://sura-media.com/og.jpg',
+      image: 'https://sura-media.com/og-sura.jpg',
       description: 'شركة سعودية للإنتاج المرئي والصوتي والتغطيات الإعلامية منذ 2022.',
       foundingDate: '2022',
       email: 'sura.mediahub@gmail.com',

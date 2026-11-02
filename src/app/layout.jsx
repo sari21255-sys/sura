@@ -26,13 +26,13 @@ export const metadata = {
     siteName: 'سُرى للإعلام',
     title: 'سُرى للإعلام | Sura Media',
     description: DESCRIPTION,
-    images: [{ url: '/og.jpg', width: 1200, height: 630, alt: 'سُرى للإعلام' }],
+    images: [{ url: '/og-sura.jpg', width: 1200, height: 630, alt: 'سُرى للإعلام', type: 'image/jpeg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'سُرى للإعلام | Sura Media',
     description: DESCRIPTION,
-    images: ['/og.jpg'],
+    images: ['/og-sura.jpg'],
   },
   robots: { index: true, follow: true },
   // Paste the Google Search Console HTML-tag code here if you verify that way:
