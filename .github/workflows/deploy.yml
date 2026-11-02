@@ -1,5 +1,6 @@
-# Builds the site and deploys it to Firebase Hosting on every push to main,
-# together with the Firestore rules and indexes.
+# Builds the site and deploys it to Firebase Hosting on every push to main.
+# Firestore rules are published from the Firebase console (the Admin SDK key
+# cannot check API settings).
 # Needs one repository secret: FIREBASE_SERVICE_ACCOUNT (the JSON key from
 # Firebase console > Project settings > Service accounts > Generate new private key).
 name: Deploy to Firebase
@@ -21,7 +22,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install
         run: npm install --no-audit --no-fund
@@ -41,11 +42,11 @@ jobs:
             echo "ready=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Deploy hosting and Firestore rules
+      - name: Deploy hosting
         if: steps.check.outputs.ready == 'true'
         env:
           SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: |
           echo "$SA" > "$RUNNER_TEMP/sa.json"
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
-          npx --yes firebase-tools@14 deploy --only hosting,firestore --project sura-8a91f --non-interactive --force
+          npx --yes firebase-tools@14 deploy --only hosting --project sura-8a91f --non-interactive --force
