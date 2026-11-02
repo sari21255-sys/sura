@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /account
+Disallow: /login
+
+Sitemap: https://sura-media.com/sitemap.xml

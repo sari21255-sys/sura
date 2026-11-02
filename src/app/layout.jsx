@@ -1,10 +1,42 @@
 import './sura.css';
 import './app.css';
 
+const SITE_URL = 'https://sura-media.com';
+const DESCRIPTION = 'سُرى للإعلام شركة سعودية للإنتاج المرئي والصوتي: أفلام وثائقية ودعائية، تغطية مؤتمرات وفعاليات وبث مباشر، تصوير فوتوغرافي وجوي، في جميع مناطق المملكة.';
+
 export const metadata = {
-  title: 'سُرى للإعلام',
-  description: 'شركة سعودية للإنتاج المرئي والصوتي والتغطيات الإعلامية: وثائقيات، أفلام دعائية، بث مباشر، وتصوير في كل مناطق المملكة.',
-  icons: { icon: '/media/logo.png' },
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'سُرى للإعلام | Sura Media — إنتاج مرئي وتغطيات إعلامية',
+    template: '%s | سُرى للإعلام',
+  },
+  description: DESCRIPTION,
+  applicationName: 'سُرى للإعلام',
+  keywords: [
+    'سرى للإعلام', 'سُرى للإعلام', 'سرى ميديا', 'Sura Media', 'شركة إنتاج إعلامي', 'إنتاج أفلام وثائقية',
+    'تغطية مؤتمرات', 'تغطية فعاليات', 'بث مباشر', 'تصوير فوتوغرافي', 'تصوير جوي', 'تصوير درون',
+    'تصوير أعراس', 'شركة تصوير في السعودية', 'إنتاج فيديو', 'أكاديمية سرى',
+  ],
+  alternates: { canonical: '/' },
+  icons: { icon: '/media/logo.png', apple: '/media/logo.png' },
+  openGraph: {
+    type: 'website',
+    locale: 'ar_SA',
+    url: SITE_URL,
+    siteName: 'سُرى للإعلام',
+    title: 'سُرى للإعلام | Sura Media',
+    description: DESCRIPTION,
+    images: [{ url: '/og.jpg', width: 1200, height: 630, alt: 'سُرى للإعلام' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'سُرى للإعلام | Sura Media',
+    description: DESCRIPTION,
+    images: ['/og.jpg'],
+  },
+  robots: { index: true, follow: true },
+  // Paste the Google Search Console HTML-tag code here if you verify that way:
+  // verification: { google: '...' },
 };
 
 export const viewport = {
