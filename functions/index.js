@@ -9,7 +9,7 @@ const { setGlobalOptions } = require('firebase-functions/v2');
 const admin = require('firebase-admin');
 
 admin.initializeApp();
-setGlobalOptions({ region: 'europe-west1', maxInstances: 5 });
+setGlobalOptions({ region: 'me-central2', maxInstances: 5 });
 
 const db = admin.firestore();
 
