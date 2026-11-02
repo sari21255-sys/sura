@@ -3,9 +3,8 @@ import {
   collection, doc, getDoc, getDocs, query, where, orderBy, setDoc, deleteDoc,
   addDoc, updateDoc, serverTimestamp, writeBatch,
 } from 'firebase/firestore';
-import { ref, uploadBytes, uploadString, getDownloadURL } from 'firebase/storage';
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth, db, storage } from './firebase';
+import { auth, db } from './firebase';
 
 /* ---------- auth ---------- */
 export function onUser(cb) {
@@ -38,42 +37,56 @@ export function saveSiteDoc(name, data) {
   return setDoc(doc(db, 'site', name), { ...data, updatedAt: serverTimestamp() });
 }
 
-/* ---------- images ---------- */
-function extOf(type) {
-  return type === 'image/png' ? 'png' : type === 'image/jpeg' ? 'jpg' : 'webp';
-}
+/* ---------- images ----------
+   On the free plan there is no Cloud Storage, so images are compressed in the
+   browser and saved as data URLs inside Firestore documents (1 MB per doc). */
+export const MAX_IMAGE_BYTES = 700 * 1024;
 
-export async function uploadImage(path, file) {
-  const r = ref(storage, path);
-  await uploadBytes(r, file, { contentType: file.type, cacheControl: 'public,max-age=31536000' });
-  return getDownloadURL(r);
-}
-
-async function uploadDataUrl(folder, dataUrl) {
-  const type = (/^data:([^;]+);/.exec(dataUrl) || [])[1] || 'image/webp';
-  const r = ref(storage, `${folder}/${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}.${extOf(type)}`);
-  await uploadString(r, dataUrl, 'data_url', { contentType: type, cacheControl: 'public,max-age=31536000' });
-  return getDownloadURL(r);
-}
-
-/** Resize an image file in the browser before upload. */
-export function resizeImage(file, max = 1600, q = 0.82) {
+/** Resize an image file and return a compressed data URL (WebP, JPEG fallback). */
+export function imageToDataUrl(file, max = 1600, q = 0.8, limit = MAX_IMAGE_BYTES) {
   return new Promise((res, rej) => {
     if (!file || !/^image\//.test(file.type)) { rej(new Error('type')); return; }
     const url = URL.createObjectURL(file);
     const im = new Image();
     im.onerror = () => { URL.revokeObjectURL(url); rej(new Error('decode')); };
     im.onload = () => {
-      const s = Math.min(1, max / Math.max(im.width, im.height));
-      const c = document.createElement('canvas');
-      c.width = Math.round(im.width * s); c.height = Math.round(im.height * s);
-      c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
       URL.revokeObjectURL(url);
-      c.toBlob((b) => (b ? res(new File([b], 'image.webp', { type: b.type })) : rej(new Error('blob'))), 'image/webp', q);
+      let size = max, quality = q, out = '';
+      for (let i = 0; i < 6; i++) {
+        const s = Math.min(1, size / Math.max(im.width, im.height));
+        const c = document.createElement('canvas');
+        c.width = Math.round(im.width * s); c.height = Math.round(im.height * s);
+        const x = c.getContext('2d');
+        if (file.type !== 'image/png') { x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height); }
+        x.drawImage(im, 0, 0, c.width, c.height);
+        out = c.toDataURL('image/webp', quality);
+        if (!out.startsWith('data:image/webp')) out = c.toDataURL('image/jpeg', quality);
+        if (out.length * 0.75 <= limit) break;
+        size = Math.round(size * 0.8); quality = Math.max(0.5, quality - 0.08);
+      }
+      out.length * 0.75 <= limit ? res(out) : rej(new Error('too-large'));
     };
     im.src = url;
   });
 }
+
+/** Approximate stored size of an object in bytes. */
+export const docBytes = (o) => new Blob([JSON.stringify(o)]).size;
+
+/* ---------- site images (one doc per image) ---------- */
+export async function loadSiteMedia() {
+  if (!db) return {};
+  try {
+    const snap = await getDocs(collection(db, 'siteMedia'));
+    const out = {};
+    snap.docs.forEach((d) => { if (d.data().url) out[d.id] = d.data().url; });
+    return out;
+  } catch {
+    return {};
+  }
+}
+export const saveSiteMedia = (key, url) => setDoc(doc(db, 'siteMedia', key), { url, updatedAt: serverTimestamp() });
+export const removeSiteMedia = (key) => deleteDoc(doc(db, 'siteMedia', key));
 
 /* ---------- articles ---------- */
 export async function loadArticles(admin) {
@@ -83,19 +96,6 @@ export async function loadArticles(admin) {
   return snap.docs.map((d) => ({ ...d.data(), id: d.id }));
 }
 
-async function uploadInlineImages(art) {
-  const out = { ...art };
-  if (out.cover && out.cover.startsWith('data:')) out.cover = await uploadDataUrl('articles', out.cover);
-  if (out.body && out.body.includes('src="data:')) {
-    const found = [...out.body.matchAll(/src="(data:image\/[^"]+)"/g)].map((m) => m[1]);
-    for (const d of [...new Set(found)]) {
-      const url = await uploadDataUrl('articles', d);
-      out.body = out.body.split(d).join(url);
-    }
-  }
-  return out;
-}
-
 /** Writes only what changed between the previous and next article lists. */
 export async function saveArticles(prev, next) {
   const before = new Map(prev.map((a) => [a.id, JSON.stringify(a)]));
@@ -103,8 +103,10 @@ export async function saveArticles(prev, next) {
   const batch = writeBatch(db);
   for (const a of next) {
     if (before.get(a.id) === JSON.stringify(a)) continue;
-    const clean = await uploadInlineImages(a);
-    const { id, ...rest } = clean;
+    const { id, ...rest } = a;
+    if (docBytes(rest) > 950 * 1024) {
+      const e = new Error('too-large'); e.code = 'too-large'; throw e;
+    }
     batch.set(doc(db, 'articles', id), { ...rest, updatedAt: serverTimestamp() });
   }
   for (const a of prev) if (!after.has(a.id)) batch.delete(doc(db, 'articles', a.id));

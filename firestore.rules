@@ -20,6 +20,12 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
 
+    // Replaced site images, one document per image (data URL).
+    match /siteMedia/{key} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
     // Academy articles: published ones are public.
     match /articles/{id} {
       allow read: if resource.data.status == 'published' || isAdmin();

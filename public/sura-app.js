@@ -267,7 +267,7 @@ async function commit(next,gotoHash,okMsg,draftKey){
   }catch(e){
     setSaving(false);
     const code=e&&e.code||'';
-    toast(code==='permission-denied'?'هذا الحساب لا يملك صلاحية تعديل الموقع.':'تعذّر الحفظ. تحقق من الاتصال وحاول مرة أخرى.',true);
+    toast(code==='permission-denied'?'هذا الحساب لا يملك صلاحية تعديل الموقع.':code==='too-large'?'المقال كبير بسبب الصور. احذف صورة أو اثنتين ثم احفظ.':'تعذّر الحفظ. تحقق من الاتصال وحاول مرة أخرى.',true);
     return false;
   }
 }

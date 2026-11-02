@@ -6,7 +6,7 @@ import MEDIA from '@/legacy/media.json';
 import TEMPLATE from '@/legacy/template';
 import SEED from '../../../scripts/seed-data/articles.json';
 import {
-  db, fs, listCollection, getSiteDoc, saveSiteDoc, uploadImage, resizeImage, importArticles, loadArticles,
+  db, fs, listCollection, getSiteDoc, saveSiteDoc, imageToDataUrl, loadSiteMedia, saveSiteMedia, removeSiteMedia, importArticles, loadArticles,
 } from '@/lib/data';
 import { STATUS } from '@/lib/services';
 
@@ -324,7 +324,7 @@ function Images() {
   const [busy, setBusy] = useState('');
   const [group, setGroup] = useState('p');
 
-  useEffect(() => { getSiteDoc('media').then((d) => setOver(d.media || {})); }, []);
+  useEffect(() => { loadSiteMedia().then(setOver); }, []);
   if (!over) return <p className="muted">جارٍ التحميل…</p>;
 
   const groups = [['p', 'صور الأعمال والواجهة'], ['s', 'صور الخدمات والأكاديمية'], ['h', 'صور الواجهة المتحركة'], ['logo', 'الشعار وشعارات الشركاء']];
@@ -334,20 +334,18 @@ function Images() {
     if (!file) return;
     setBusy(k);
     try {
-      const small = k.startsWith('logo') ? file : await resizeImage(file, 2000, 0.84);
-      const ext = small.type === 'image/png' ? 'png' : small.type === 'image/svg+xml' ? 'svg' : 'webp';
-      const url = await uploadImage(`site/media/${k}-${Date.now().toString(36)}.${ext}`, small);
-      const next = { ...over, [k]: url };
-      await saveSiteDoc('media', { media: next });
-      setOver(next);
+      const isLogo = k.startsWith('logo');
+      const url = await imageToDataUrl(file, isLogo ? 1200 : 2000, 0.82);
+      await saveSiteMedia(k, url);
+      setOver({ ...over, [k]: url });
     } catch {
-      alert('تعذّر رفع الصورة.');
+      alert('تعذّر حفظ الصورة. جرّب صورة أصغر حجمًا.');
     }
     setBusy('');
   }
   async function reset(k) {
+    await removeSiteMedia(k);
     const next = { ...over }; delete next[k];
-    await saveSiteDoc('media', { media: next });
     setOver(next);
   }
 

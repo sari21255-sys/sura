@@ -5,7 +5,7 @@ import MEDIA from '@/legacy/media.json';
 import SEED from '../../scripts/seed-data/articles.json';
 import { firebaseReady } from '@/lib/firebase';
 import {
-  onUser, isAdmin, getSiteDoc, loadArticles, saveArticles, saveRequest,
+  onUser, isAdmin, getSiteDoc, loadSiteMedia, loadArticles, saveArticles, saveRequest,
 } from '@/lib/data';
 
 const strip = ({ updatedAt, createdAt, ...a }) => a;
@@ -23,9 +23,9 @@ export default function SiteClient() {
     async function boot() {
       let texts = {}, mediaOverrides = {}, settings = {}, articles = [];
       if (firebaseReady) {
-        const [t, m, s] = await Promise.all([getSiteDoc('texts'), getSiteDoc('media'), getSiteDoc('settings')]);
+        const [t, m, s] = await Promise.all([getSiteDoc('texts'), loadSiteMedia(), getSiteDoc('settings')]);
         texts = t.texts || {};
-        mediaOverrides = m.media || {};
+        mediaOverrides = m;
         settings = s;
         try { articles = (await loadArticles(false)).map(strip); } catch { articles = []; }
       }

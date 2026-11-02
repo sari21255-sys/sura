@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Shell from '@/components/Shell';
-import { db, fs, uploadImage, resizeImage } from '@/lib/data';
+import { db, fs, imageToDataUrl } from '@/lib/data';
 import { SERVICES } from '@/lib/services';
 
 
@@ -62,7 +62,7 @@ function BookForm({ user }) {
   function addFiles(e) {
     const picked = [...e.target.files].filter((x) => x.type.startsWith('image/'));
     e.target.value = '';
-    setFiles((prev) => [...prev, ...picked.map((file) => ({ file, url: URL.createObjectURL(file) }))].slice(0, 6));
+    setFiles((prev) => [...prev, ...picked.map((file) => ({ file, url: URL.createObjectURL(file) }))].slice(0, 4));
   }
 
   async function submit(e) {
@@ -74,8 +74,8 @@ function BookForm({ user }) {
     try {
       const attachments = [];
       for (const { file } of files) {
-        const small = await resizeImage(file, 1800, 0.82);
-        attachments.push(await uploadImage(`bookings/${user.uid}/${Date.now().toString(36)}-${attachments.length}.webp`, small));
+        // 4 photos x ~200 KB stays well under Firestore's 1 MB document limit.
+        attachments.push(await imageToDataUrl(file, 1280, 0.72, 200 * 1024));
       }
       await fs.addDoc(fs.collection(db, 'bookings'), {
         uid: user.uid,
@@ -157,7 +157,7 @@ function BookForm({ user }) {
 
           <div className="card-p">
             <h2>صور المكان</h2>
-            <p className="muted">حتى ٦ صور، تساعدنا على تجهيز الإضاءة والمعدات.</p>
+            <p className="muted">حتى ٤ صور، تساعدنا على تجهيز الإضاءة والمعدات.</p>
             <div className="inline">
               <button className="btn sm" type="button" onClick={() => camRef.current.click()}>التقط صورة</button>
               <button className="btn sm" type="button" onClick={() => picRef.current.click()}>اختر من الجهاز</button>

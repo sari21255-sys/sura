@@ -36,7 +36,7 @@ export default function Shell({ active, children }) {
       <main className="app-main">
         <div className="wrap">
           {!firebaseReady ? (
-            <div className="card-p"><h2>Firebase غير مربوط بعد</h2><p className="muted">بعد ربط المشروع بـ Firebase App Hosting تعمل هذه الصفحة تلقائيًا.</p></div>
+            <div className="card-p"><h2>Firebase غير مربوط بعد</h2><p className="muted">إعدادات Firebase ناقصة في src/lib/firebase.js.</p></div>
           ) : user === undefined ? (
             <p className="muted">جارٍ التحميل…</p>
           ) : (
