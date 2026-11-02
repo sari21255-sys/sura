@@ -19,7 +19,7 @@
             ← ينشره على Firebase Hosting مع قواعد Firestore
 ```
 
-الرابط: https://sura-8a91f.web.app
+الرابط: https://sura-media.com (والاحتياطي https://sura-8a91f.web.app)
 
 ## الخطة المجانية
 
